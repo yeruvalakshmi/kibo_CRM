@@ -1,8 +1,15 @@
 package com.kiboCRM.genericLibs;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
+import com.google.common.io.Files;
 
 public class WebDriverCommonLib {
 	
@@ -41,6 +48,18 @@ public class WebDriverCommonLib {
  public void dragAndDropElement(WebElement source,WebElement target) {
 	Actions ac = new Actions(BaseTest.driver);
 	ac.dragAndDrop(source, target).perform();
+ }
+ public void getFullPageScreenshot(String screenshotPath) {
+	 
+	 TakesScreenshot ts=(TakesScreenshot) BaseTest.driver;
+	 File src=ts.getScreenshotAs(OutputType.FILE);
+	 File dest=new File(screenshotPath);
+	 try {
+		 Files.copy(src, dest);
+	 }catch (IOException e) {
+		 e.printStackTrace();
+	 }
+	 
  }
  
 }

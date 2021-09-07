@@ -17,7 +17,15 @@ public class CreateAccount {
 		PageFactory.initElements(BaseTest.driver, this);	
 	}
 	
+	public void createAccount(String accountName) {
+		accountnameTB.sendKeys(accountName);
+	}
 	
+	public void accountslink() {
+		accountslink.click();
+		newaccountlink.click();
+		saveBtn.click();
+	}
 
 
 }
