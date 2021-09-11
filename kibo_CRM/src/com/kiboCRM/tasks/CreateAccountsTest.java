@@ -1,5 +1,7 @@
 package com.kiboCRM.tasks;
 
+import org.testng.annotations.Test;
+
 import com.kiboCRM.genericLibs.BaseTest;
 import com.kiboCRM.genericLibs.FileLib;
 import com.kiboCRM.genericLibs.WebDriverCommonLib;
@@ -8,11 +10,8 @@ import com.kiboCRM.pages.LoginPage;
 
 public class CreateAccountsTest extends BaseTest {
 
-	public static void main(String[] args) throws Throwable {
-		
-		BaseTest bt=new BaseTest();
-		bt.openbrowser();
-		
+	@Test
+		public void CreatedAccountsTest() throws Throwable {
 		
 		LoginPage lp=new LoginPage();
 		FileLib flib=new FileLib();

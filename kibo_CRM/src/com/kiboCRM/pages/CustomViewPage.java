@@ -8,6 +8,7 @@ import com.kiboCRM.genericLibs.BaseTest;
 
 public class CustomViewPage {
 	@FindBy(xpath="//input[@value=\"New Lead\"]") private WebElement newLeadsBtn;
+	@FindBy (xpath="//input[@value='New Account']") private WebElement newAccountLink;
 	
 	public CustomViewPage()
 	{
@@ -16,6 +17,9 @@ public class CustomViewPage {
 	public void clickNewLeadBtn()
 	{
 		newLeadsBtn.click();
+	}
+	public void clickNewAccountLink() {
+		newAccountLink.click();
 	}
 
 }
