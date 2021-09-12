@@ -23,7 +23,7 @@ public class CreateLeadsTest extends BaseTest {
 		wlib.verify(wlib.getPageTitle(), flib.readPropertyData(PROP_PATH, "homeTitle"),"homeTitle");
 		
 		HomePage hp=new HomePage();
-		hp.clickLeadsTab();
+		hp.clickleadsTab();
 		
 		wlib.verify(wlib.getPageTitle(), flib.readPropertyData(PROP_PATH, "customViewTitle"),"Custom View Page" );
 		

@@ -3,10 +3,13 @@ package com.kiboCRM.genericLibs;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class BaseTest implements IAutoConsts{
 	
 	public static WebDriver driver;
+	@BeforeClass
 	public void openbrowser() throws Throwable
 	{
 		FileLib flib = new FileLib();
@@ -32,6 +35,7 @@ public class BaseTest implements IAutoConsts{
 		WebDriverCommonLib wlib = new WebDriverCommonLib();
 		wlib.verify(wlib.getPageTitle(), flib.readPropertyData(PROP_PATH, "loginTitle"), "LoginPage");
 		}
+	@AfterClass
 	public void closeBrowser() {
 		driver.quit();
 	}

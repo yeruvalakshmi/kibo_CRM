@@ -10,16 +10,32 @@ public class HomePage {
 
 	@FindBy(xpath="//a[text()='Leads']") private WebElement leadsTab;
 	@FindBy(xpath="//a[text()='Setup']") private WebElement setup;
-	
+	@FindBy(xpath="//a[@id='Accountstab']") private WebElement accountsTab;
+	@FindBy(xpath="//a[text()='Contacts']") private WebElement contactsTab;
+	@FindBy(xpath="//a[text()='Potentials']") private WebElement potentialsTab;
+	@FindBy(xpath="//a[text()='Campaigns']") private WebElement campaignsTab;
 	
 	public HomePage()
 	{
 		PageFactory.initElements(BaseTest.driver, this);
 	}
-	public void clickLeadsTab() {
+	
+	public void clickleadsTab() {
 		leadsTab.click();
 	}
-	public void setupTab() {
-		setup.click();
+		public void clicksetupTab() {
+			setup.click();
+		}
+		public void clickaccountsTab() {
+		accountsTab.click();
+		}
+		public void clickcontactsTab() {
+		contactsTab.click();
+		}
+		public void clickpotentialsTab() {
+			potentialsTab.click();
+		}
+		public void clickcampaignsTab() {
+		campaignsTab.click();
 	}
 }

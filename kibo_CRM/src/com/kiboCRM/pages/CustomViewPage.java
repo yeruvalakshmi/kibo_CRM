@@ -8,7 +8,10 @@ import com.kiboCRM.genericLibs.BaseTest;
 
 public class CustomViewPage {
 	@FindBy(xpath="//input[@value=\"New Lead\"]") private WebElement newLeadsBtn;
-	@FindBy (xpath="//input[@value='New Account']") private WebElement newAccountLink;
+	@FindBy(xpath="//input[@value='New Account']") private WebElement newAccountLink;
+	@FindBy(xpath="//a[text()='Contacts']") private WebElement newContactsLink;
+	@FindBy(xpath="//input[@value='New Potential']") WebElement newPotentialLink;
+	@FindBy(xpath="//input[@value='New Campaign']") WebElement newCampaignLink;
 	
 	public CustomViewPage()
 	{
@@ -18,8 +21,17 @@ public class CustomViewPage {
 	{
 		newLeadsBtn.click();
 	}
-	public void clickNewAccountLink() {
-		newAccountLink.click();
+		public void clickNewAccountsBtn() {
+			newAccountLink.click();
+		}
+		public void clickNewContactsBtn() {
+		newContactsLink.click();
+		}
+		public void clickNewPotentialLink() {
+		newPotentialLink.click();
+		}
+		public void clickNewCampaignLink() {
+		newCampaignLink.click();
 	}
 
 }
